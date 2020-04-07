@@ -1,0 +1,118 @@
+<div class="block-header">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12">
+            <h2 id="dashboard_title" class="text-white">Elektrik İzleme Sistemi</h2>
+            <ul class="breadcrumb p-l-0 p-b-0 ">
+                <li class="breadcrumb-item"><a [routerLink]="['/dashboard']"><i class="zmdi zmdi-home"></i>Dashboard</a></li>
+                <li class=" breadcrumb-item active">Ana Dashboard</li>
+            </ul>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 text-right">
+            
+        </div>
+    </div>
+  </div>
+
+
+  <div class="container-fluid">
+
+    <div id="row" class="row clearfix">
+        <div id="height" class="col-lg-3 col-md-3 col-md-12" *ngFor="let detailTileOption of detailTileOptions">
+            <sa-detail-tiles   [title]="detailTileOption.title" [value]="detailTileOption.value" [details]="detailTileOption.details"
+                [chartOptions]="detailTileOption.options"></sa-detail-tiles>
+
+        </div>
+
+        <!-- <div id="height" class="col-lg-3 col-md-3 col-md-12" >
+            <sa-detail-tiles   [title]="detailTileOptions[0].title" [value]="detailTileOptions[0].value" [details]="detailTileOptions[0].details"
+                [chartOptions]="detailTileOptions[0].options"></sa-detail-tiles>
+
+        </div>
+
+        <div id="height" class="col-lg-3 col-md-3 col-md-12" >
+            <sa-detail-tiles   [title]="detailTileOptions[1].title" [value]="detailTileOptions[1].value" [details]="detailTileOptions[1].details"
+                [chartOptions]="detailTileOptions[1].options"></sa-detail-tiles>
+
+        </div> -->
+
+        <div id="height" class="col-lg-3 col-md-3 col-md-12"  *ngFor="let option of options">
+
+            <app-widget-counter-tile   [options]="option"></app-widget-counter-tile>
+        </div>
+
+    </div>
+
+    <div id="row" class="row clearfix">
+        <div  class="col-lg-6 col-md-6">
+            <div class="card">
+                <div class="header">
+                    <h2 class="text-white">{{verim_name}}</h2>
+                    
+                </div>
+      
+                <!-- <div class="body"> -->
+                  
+                    <div echarts [options]="powerChart_Option" class="graph m-b-20"></div>
+                  
+                <!-- </div> -->
+            </div>
+        </div>
+
+        <div  class="col-lg-6 col-md-6">
+            <div class="card">
+                <div class="header">
+                    <h2 class="text-white">{{set_name}}</h2>
+                    
+                </div>
+      
+                <!-- <div class="body"> -->
+                    
+                    <!-- <div echarts [options]="related_Graph" class="graph m-b-20"></div> -->
+                    <div echarts [options]="frekansChart_Option" class="graph m-b-20"></div>
+                  
+                <!-- </div> -->
+            </div>
+        </div>
+
+        
+
+    </div>
+
+
+    <div id="row" class="row clearfix">
+        <div  class="col-lg-6 col-md-6">
+            <div class="card">
+                <div class="header">
+                    <h2 class="text-white">{{verim_name2}}</h2>
+                    
+                </div>
+      
+                <!-- <div class="body"> -->
+                  
+                    <div echarts [options]="akimChart_Option" class="graph m-b-20"></div>
+                  
+                <!-- </div> -->
+            </div>
+        </div>
+
+        <div  class="col-lg-6 col-md-6">
+            <div class="card">
+                <div class="header">
+                    <h2 class="text-white">{{verim_name3}}</h2>
+                    
+                </div>
+      
+                <!-- <div class="body"> -->
+                    
+                    <!-- <div echarts [options]="related_Graph" class="graph m-b-20"></div> -->
+                    <div echarts [options]="voltajChart_Option" class="graph m-b-20"></div>
+                  
+                <!-- </div> -->
+            </div>
+        </div>
+
+        
+
+    </div>
+
+  </div>

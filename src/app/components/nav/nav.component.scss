@@ -1,0 +1,45 @@
+
+// tüm arka plan 
+.sidenav-container {
+  display:block;
+  width:100%;
+  height:100%;
+  //background-color: #222222;
+   background: url('../../../assets/img/this.jpg') no-repeat center center fixed;
+  background-size: cover; 
+}
+
+.sidenav {
+  width: 250;
+  background-color: #ccc6c6;
+}
+
+.sidenav .mat-toolbar {
+  background: iherit;
+}
+
+// logonun olduğu yer
+
+.mat-toolbar {
+ // background:rgb(19, 1, 36);
+ background-image: linear-gradient(to right,#58C5C7, #54B6E7, #8781BD, #393367); 
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+.active-link {
+  border: solid;
+}
+
+#footer{
+  //background: #222222;
+  background:rgb(19, 1, 36);
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
+}

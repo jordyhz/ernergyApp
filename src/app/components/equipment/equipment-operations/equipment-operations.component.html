@@ -1,0 +1,23 @@
+<form [formGroup]="inputForm" (ngSubmit)="saveEquipment()" novalidate>
+  <div class="form-group">
+    <mat-form-field appearance="outline" style="width: 140px">
+      <mat-label>Ekipman Adı</mat-label>
+      <input matInput placeholder="Ekipman Adı" formControlName="name" required>
+      <mat-error *ngIf="hasError('name','required')">Ekipman adını giriniz</mat-error>
+    </mat-form-field>
+  </div>
+  <div class="form-group">
+    <mat-form-field appearance="outline" style="width: 500px">
+      <mat-label>Açıklama</mat-label>
+      <textarea matInput placeholder="Açıklama" formControlName="desc" maxlength="100"></textarea>
+    </mat-form-field>
+  </div>
+  <div class="btn-toolbar">
+    <button mat-stroked-button  class="btn btn-default"  type="reset"  (click)="reset()">Yeni</button>
+    <button mat-stroked-button  class="btn btn-default"  type="submit" [disabled]="!inputForm.valid">Kaydet</button>
+    <button mat-stroked-button  class="btn btn-default" color="warn"  type ="reset" (click)="onNoClick()">Vazgeç</button>
+  </div>
+
+</form>
+
+

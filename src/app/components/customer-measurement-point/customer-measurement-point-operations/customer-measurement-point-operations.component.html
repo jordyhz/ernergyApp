@@ -1,0 +1,51 @@
+<div class="row">
+    <div class="column">
+      <form [formGroup]="inputForm" (ngSubmit)="saveMeasurementPoint()" novalidate>
+        <div class="form-group">
+          <mat-label>{{customer.cusName}}</mat-label>
+        </div>
+        <div class="form-group">
+          <mat-form-field appearance="outline" style="width: 180px">
+            <mat-label>Müşteri Ölçüm Adı</mat-label>
+            <input matInput placeholder="Adı" formControlName="name"  maxlength="50" required>
+          </mat-form-field>
+        </div>
+        <div class="form-group">
+          <mat-form-field appearance="outline" style="width: 180px">
+            <mat-label>Açıklama</mat-label>
+            <input matInput placeholder="Açıklama" formControlName="desc" required maxlength="20">
+          </mat-form-field>
+        </div>
+
+        <mat-form-field>
+          <mat-label>Müşteri Ekipman Adı</mat-label>
+          <mat-select formControlName="customer_Equipment_Id" #singleSelect>
+            <mat-option *ngFor="let row of customerEquipments" [value]="row.id">
+              {{row.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Ölçüm Adı</mat-label>
+            <mat-select formControlName="mesPoint_id" #singleSelect>
+              <mat-option *ngFor="let row of measurementPoints" [value]="row.id">
+                {{row.name}} - level : {{row.level}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        <div class="btn-toolbar">
+          <button mat-stroked-button  class="btn btn-default"  type="reset"  (click)="reset()">Yeni</button>
+          <button mat-stroked-button  class="btn btn-default"  type="submit" [disabled]="!inputForm.valid">Kaydet</button>
+          <button mat-stroked-button  class="btn btn-default" color="warn"  type ="reset" (click)="close()">Vazgeç</button>
+        </div>
+      </form>
+    </div>
+    <div class="column">
+      <form  novalidate>
+        <app-customer-measurement-point-list [customerId]="customer.id" (onUpdate)="onUpdate($event)"  (onDelete)="reset()"></app-customer-measurement-point-list>
+      </form>
+      
+    </div>
+  </div>
+  
+  

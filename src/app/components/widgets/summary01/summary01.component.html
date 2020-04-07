@@ -1,0 +1,23 @@
+
+
+    
+            <div class="col-lg-4 col-md-4 col-md-12" *ngFor="let detailTileOption of detailTileOptions">
+                <sa-detail-tiles class="details" [title]="detailTileOption.title" [value]="detailTileOption.value" [details]="detailTileOption.details"
+                    [chartOptions]="detailTileOption.options"></sa-detail-tiles>
+
+            </div>
+
+
+            
+<!-- <div class="container-fluid">
+
+    <div class="row clearfix" >
+            <div class="col-lg-4 col-md-4 col-md-12" *ngFor="let detailTileOption of detailTileOptions">
+                <sa-detail-tiles [title]="detailTileOption.title" [value]="detailTileOption.value" [details]="detailTileOption.details"
+                    [chartOptions]="detailTileOption.options"></sa-detail-tiles>
+            </div>
+
+    </div>
+    
+</div> -->
+

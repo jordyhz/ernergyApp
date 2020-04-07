@@ -1,0 +1,13 @@
+<mat-spinner *ngIf="isLoading"></mat-spinner>
+<mat-selection-list #attrList (selectionChange)="onGroupsChange(attrList.selectedOptions.selected)">
+  <mat-list-option *ngFor="let attr of attributes"  [selected]="attr.selected" [value]="attr"
+                   style="display:inline-block; width:50%; text-align:center;">
+    {{attr.name}}
+  </mat-list-option>
+</mat-selection-list>
+<div class="btn-toolbar">
+  <button mat-stroked-button  class="btn btn-default"  type="submit" (click)="saveAttribute()">Kaydet</button>
+  <button mat-stroked-button  class="btn btn-default" color="warn"  type ="reset" (click)="onNoClick()">Vazgeç</button>
+</div>
+<p>
+</p>

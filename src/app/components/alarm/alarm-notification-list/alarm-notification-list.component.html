@@ -1,0 +1,94 @@
+<h4 class=" breadcrumb-item active">Alarm Tanımlama Listesi</h4>
+
+<div class="jumbotron">
+    <div class="container">
+
+  
+    <a class="btn btn-outline-secondary" routerLink="/alarm/alarm-notification"><i class="fa fa-plus-square"></i> Create New Alarm Notification</a>
+  
+      <div class="customerList-header" fxLayout="row">
+        <mat-form-field>
+          <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+        </mat-form-field>
+      </div>
+      <div class="attributeListContainer">
+        <mat-spinner [style.display]="isLoading ? 'block' : 'none'" ></mat-spinner>
+        <mat-table [style.display]="isLoading === false ? 'block' : 'none'" [dataSource]="dsAlarms" matSort>
+          <ng-container  matColumnDef="id">
+            <mat-header-cell   *matHeaderCellDef mat-sort-header> Id </mat-header-cell>
+             <mat-cell class="heading"  *matCellDef="let row" (click)="sendData(row.id)"> {{row.id}} </mat-cell>
+          </ng-container>
+  
+          <ng-container matColumnDef="notName">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Notification Name </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.notName}} </mat-cell>
+          </ng-container>
+  
+          <ng-container matColumnDef="notDesc">
+            <mat-header-cell *matHeaderCellDef>Notififcation Description </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.notDesc}} </mat-cell>
+          </ng-container>
+  
+  
+          <ng-container matColumnDef="customerId">
+            <mat-header-cell *matHeaderCellDef> Customer Id </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.customerId}} </mat-cell>
+          </ng-container>
+  
+          <ng-container matColumnDef="customerTag">
+            <mat-header-cell *matHeaderCellDef>  Tag Name </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.customerTag.attribute.name}} </mat-cell>
+          </ng-container>
+
+          
+
+          <ng-container matColumnDef="notCheck">
+            <mat-header-cell *matHeaderCellDef>  Notification Check </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.notCheck.value}} </mat-cell>
+          </ng-container>
+  
+          <ng-container matColumnDef="thresholdValue">
+            <mat-header-cell *matHeaderCellDef>  Threshold </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.thresholdValue}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="period">
+            <mat-header-cell *matHeaderCellDef>  Period </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.period}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="notLevel">
+            <mat-header-cell *matHeaderCellDef>  Notififcation Level </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.notLevel.value}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="active">
+            <mat-header-cell *matHeaderCellDef>  Active </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.active}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="deleted">
+            <mat-header-cell *matHeaderCellDef>  Deleted </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.deleted}} </mat-cell>
+          </ng-container>
+  
+          <ng-container matColumnDef="update">
+            <th mat-header-cell *matHeaderCellDef [width]="100"> Güncelle </th>
+            <td mat-cell *matCellDef="let row" [width]="100">
+              <button mat-icon-button color="accent" (click)="sendData(row.id)" >
+                <mat-icon class="mat-17">system_update</mat-icon>
+              </button>
+            </td>
+          </ng-container>
+
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns;">
+          </mat-row>
+        </mat-table>
+  
+        <mat-paginator [style.display]="isLoading === false ? 'block' : 'none'" [pageSizeOptions]="[5, 10, 25, 50, 100]"></mat-paginator>
+      
+      </div>
+    </div>
+  </div>
+  

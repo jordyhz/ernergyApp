@@ -1,0 +1,42 @@
+<form [formGroup]="inputForm" (ngSubmit)="saveMeasurementPoint()">
+  <div class="form-group">
+    <mat-form-field appearance="outline" style="width: 150px">
+      <mat-label>Ölçüm Noktası Adı</mat-label>
+      <input matInput formControlName="name" maxlength="50" required>
+    </mat-form-field>
+  </div>
+  <div class="form-group">
+    <mat-form-field appearance="outline" style="width: 500px">
+      <mat-label>Açıklama</mat-label>
+      <textarea matInput placeholder="Açıklama" formControlName="desc" maxlength="100"></textarea>
+    </mat-form-field>
+  </div>
+  <div class="form-group">
+    <mat-form-field appearance="outline" style="width: 100px" required>
+      <mat-label>Seviyesi</mat-label>
+      <input matInput placeholder="Seviye" formControlName="level" maxlength="3" type="number" required
+             oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+    </mat-form-field>
+  </div>
+  <div class="form-group row">
+    <mat-form-field>
+      <mat-label>Ekipman Adı</mat-label>
+      <mat-select formControlName="equipmentId" required #singleSelect>
+        <mat-option>
+          <ngx-mat-select-search formControlName="equipmentName" placeholderLabel="Ekipman bul..."  noEntriesFoundLabel="Kayıt bulunamadı"></ngx-mat-select-search>
+        </mat-option>
+        <mat-option *ngFor="let row of filteredEquipments | async" [value]="row.id">
+          {{row.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="btn-toolbar">
+    <button mat-stroked-button  class="btn btn-default"  type="reset"  (click)="reset()">Yeni</button>
+    <button mat-stroked-button  class="btn btn-default"  type="submit" [disabled]="!inputForm.valid">Kaydet</button>
+    <button mat-stroked-button  class="btn btn-default" color="warn"  type ="reset" (click)="onNoClick()">Vazgeç</button>
+  </div>
+
+</form>
+
+

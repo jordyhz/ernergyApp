@@ -1,0 +1,61 @@
+
+
+<!-- Editable table -->
+<div class="card">
+    
+    <div class="card-body">
+      <div id="table" class="table-editable">
+        <span class="table-add float-right mb-3 mr-2">
+          <!-- <a class="text-success" (click)="add()">
+            <mdb-icon fas icon="plus" size="2x"></mdb-icon>
+          </a> -->
+          <button id="add" class="btn btn-primary btn-round btn-sm" type="button"   (click)="add()">Ekle</button>
+        </span>
+        <table class="table table-bordered table-responsive-md table-striped text-center">
+          <tr>
+            <th class="text-center">İsim</th>
+            <th class="text-center">Soyisim</th>
+            <th class="text-center">Ünvan</th>
+            <th class="text-center">Email</th>
+            <th class="text-center">Aktif/Pasif</th>
+            <th class="text-center">Remove</th>
+          </tr>
+          <tr *ngFor="let person of personList; let id = index">
+            <td>
+              <span (keyup)="changeValue(id, 'name', $event)" (blur)="updateList(id, 'name', $event)" contenteditable="true">{{person.name}}</span>
+            </td>
+            <td>
+              <span contenteditable="true" (keyup)="changeValue(id, 'surname', $event)" (blur)="updateList(id, 'surname', $event)">{{person.surname}}</span>
+            </td>
+            <td>
+              <span contenteditable="true" (keyup)="changeValue(id, 'title', $event)" (blur)="updateList(id, 'title', $event)">{{person.title}}</span>
+            </td>
+            <td>
+              <span contenteditable="true" (keyup)="changeValue(id, 'email', $event)" (blur)="updateList(id, 'email', $event)">{{person.email}}</span>
+            </td>
+            <td>
+              <span contenteditable="true" (keyup)="changeValue(id, 'status', $event)" (blur)="updateList(id, 'status', $event)">{{person.status}}</span>
+            </td>
+            <!-- <td>
+              <span class="table-up">
+                <a class="indigo-text">
+                  <mdb-icon fas icon="long-arrow-alt-up"></mdb-icon>
+                </a>
+              </span>
+              <span class="table-down">
+                <a class="indigo-text">
+                  <mdb-icon fas icon="long-arrow-alt-down"></mdb-icon>
+                </a>
+              </span>
+            </td> -->
+            <td>
+              <span class="table-remove">
+                <button id="delete" class="btn btn-primary btn-round btn-sm" type="button"   (click)="remove(id)">Sil</button>
+              </span>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <!-- Editable table -->

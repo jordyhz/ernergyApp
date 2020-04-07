@@ -1,0 +1,151 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav"
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list dense>
+      <a mat-list-item routerLink="/home"><mat-icon>dashboard</mat-icon>Kontrol Paneli</a>
+      <mat-expansion-panel [class.mat-elevation-z0]="true" dense>
+        <mat-expansion-panel-header>
+          Tanımlamalar
+        </mat-expansion-panel-header>
+        <mat-nav-list dense>
+          <a mat-list-item routerLink="/metric" (click)="close()" routerLinkActive="active-link"><mat-icon>vpn_key</mat-icon>Metric Tanımlama</a>
+        </mat-nav-list>
+        <mat-nav-list dense>
+          <a mat-list-item routerLink="/screen" (click)="close()" routerLinkActive="active-link"><mat-icon>vpn_key</mat-icon>Ekran Tanımlama</a>
+        </mat-nav-list>
+        <mat-nav-list dense>
+          <a mat-list-item routerLink="/attribute" (click)="close()" routerLinkActive="active-link"><mat-icon>person</mat-icon>Özellik Tanımlama</a>
+        </mat-nav-list>
+        <mat-nav-list dense>
+          <a mat-list-item routerLink="/equipment" (click)="close()" routerLinkActive="active-link"><mat-icon>person</mat-icon>Ekipman Tanımlama</a>
+        </mat-nav-list>
+        <mat-nav-list dense>
+          <a mat-list-item routerLink="/measurementPoint" (click)="close()" routerLinkActive="active-link"><mat-icon>person</mat-icon>Ölçüm Noktası Tanımlama</a>
+        </mat-nav-list>
+        <mat-nav-list dense>
+          <mat-expansion-panel [class.mat-elevation-z0]="true" dense>
+            <mat-expansion-panel-header>
+              Ölçüm Konfigürasyonu
+            </mat-expansion-panel-header>
+            <mat-nav-list dense>
+              <a mat-list-item routerLink="/customer_equipment" (click)="close()" routerLinkActive="active-link"><mat-icon>person</mat-icon>Müşteriye Ekipman Tanımlama</a>
+            </mat-nav-list>
+            <mat-nav-list dense>
+              <a mat-list-item   routerLink="/customer_measurement_point" (click)="close()" routerLinkActive="active-link"><mat-icon>person</mat-icon>Müşteri  Ölçüm Noktası Tanımlama</a>
+            </mat-nav-list>
+          </mat-expansion-panel>
+        </mat-nav-list>
+        <mat-nav-list dense>
+          <mat-expansion-panel [class.mat-elevation-z0]="true" dense>
+            <mat-expansion-panel-header>
+              Roller
+            </mat-expansion-panel-header>
+            <mat-nav-list dense>
+              <a mat-list-item  routerLinkActive="active-link"><mat-icon>person</mat-icon>Rol Tanımlama</a>
+            </mat-nav-list>
+            <mat-nav-list dense>
+              <a mat-list-item  routerLinkActive="active-link"><mat-icon>person</mat-icon>Rol Ekranı Tanımlama</a>
+            </mat-nav-list>
+          </mat-expansion-panel>
+        </mat-nav-list>
+        <mat-nav-list dense>
+          <mat-expansion-panel [class.mat-elevation-z0]="true" dense>
+            <mat-expansion-panel-header>
+              Modüller
+            </mat-expansion-panel-header>
+            <mat-nav-list dense>
+              <a mat-list-item routerLink="/module" routerLinkActive="active-link"><mat-icon>person</mat-icon>Modül Tanımlama</a>
+            </mat-nav-list>
+            <mat-nav-list dense>
+              <a mat-list-item routerLink="/module_screen" routerLinkActive="active-link"><mat-icon>person</mat-icon>Modül Ekranı Tanımlama</a>
+            </mat-nav-list>
+          </mat-expansion-panel>
+        </mat-nav-list>
+        <mat-nav-list dense>
+          <mat-expansion-panel [class.mat-elevation-z0]="true" dense>
+            <mat-expansion-panel-header>
+              Müşteriler
+            </mat-expansion-panel-header>
+            <mat-nav-list dense>
+              <a mat-list-item routerLink="/customer" (click)="close()" routerLinkActive="active-link" ><mat-icon>person</mat-icon>Müşteri Tanımlama</a>
+            </mat-nav-list>
+            <mat-nav-list dense>
+              <a mat-list-item routerLinkActive="active-link"><mat-icon>person</mat-icon>Müşteri Kullancısı Tanımlama</a>
+            </mat-nav-list>
+            <mat-nav-list dense>
+              <a mat-list-item routerLinkActive="active-link"><mat-icon>person</mat-icon>Müşteri Modülü Tanımlama</a>
+            </mat-nav-list>
+          </mat-expansion-panel>
+        </mat-nav-list>
+
+
+      </mat-expansion-panel>
+      <mat-expansion-panel  [class.mat-elevation-z0]="true" dense>
+        <mat-expansion-panel-header>
+          Dashboard
+        </mat-expansion-panel-header>
+        <mat-nav-list dense>
+          <a mat-list-item routerLink="/dashboard/index" (click)="close()" routerLinkActive="active-link" ><mat-icon>person</mat-icon>First Index</a>
+        </mat-nav-list>
+        <mat-nav-list dense>
+          <a mat-list-item routerLink="/dashboard/index2" (click)="close()" routerLinkActive="active-link" ><mat-icon>person</mat-icon>Second Index</a>
+        </mat-nav-list>
+      </mat-expansion-panel>
+
+
+      <a mat-list-item routerLink="/alarm" (click)="close()" routerLinkActive="active-link" ><mat-icon>alarm</mat-icon>Alarm</a>
+
+      <a mat-list-item (click)="logOut()" ><mat-icon>exit_to_app</mat-icon>Çıkış</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar>
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+     
+     <!-- <i class="material-icons" style="color: #da9d29; font-size: 48px;">
+      </i>
+      <span style="font-size: 24px;">bserver </span> -->
+      <!-- <img src="assets/img/observer_icon.svg" alt="logo"> -->
+      <img src="assets/img/observer_logotype.svg" width="200" alt="logo">
+      
+    
+    <!-- <a [href]="'http://angular-deployment-app.s3-website-us-east-1.amazonaws.com/dashboard/index4'" target="_blank" 
+    appExternalUrl
+    >Dashboard1</a>
+  
+    <a [href]="'https://www.google.com'" target="_blank" 
+    appExternalUrl
+      >Dashboardx1</a> -->
+
+    <!-- <a class=”btn” [href]="'http://angular-deployment-app.s3-website-us-east-1.amazonaws.com/dashboard/index4'">Dashboard2</a> -->
+
+    <!-- <a class=”btn” [href]="'http://angular-deployment-app.s3-website-us-east-1.amazonaws.com/dashboard/index4'" target="_blank" >Dashboard</a> -->
+
+    
+      <!-- <img src="assets/img/observercolor-logotype.svg" alt="logo">
+      <img src="assets/img/observercolor-icon.svg" alt="logo"> -->
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+
+<!-- Footer -->
+<footer id= "footer" class="page-footer font-small blue">
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2019 Copyright : Soliner - Observer - Version 0.1.3
+    <a href="#"></a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->

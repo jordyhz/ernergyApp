@@ -1,0 +1,66 @@
+<div class="block-header">
+  <div class="row">
+      <div class="col-lg-6 col-md-6 col-sm-12">
+          <h2 id="dashboard_title">Elektrik İzleme Sistemi</h2>
+          <ul class="breadcrumb p-l-0 p-b-0 ">
+              <li class="breadcrumb-item"><a [routerLink]="['/dashboard']"><i class="zmdi zmdi-home"></i>Dashboard</a></li>
+              <li class=" breadcrumb-item active">Ana Dashboard</li>
+          </ul>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-12 text-right">
+          
+      </div>
+  </div>
+</div>
+
+
+
+
+<div  class="container-fluid">
+  
+  <app-widget-summary01 class="row clearfix"></app-widget-summary01>
+  <div id="rowww" class="row clearfix">
+
+    <div  class="col-lg-12 col-md-12">
+      <div class="card">
+          <div class="header">
+              <h2 class="text-white">{{verim_name}}</h2>
+              
+          </div>
+
+          <!-- <div class="body"> -->
+              
+              <!-- <div class="btn-group"> -->
+                <!-- <button (click)="getVerim('hourly')" type="button" class="btn btn-primary btn-round btn-sm">Saatlık</button>
+                <button (click)="getVerim('daily')" type="button" class="btn btn-primary btn-round btn-sm">Günlük</button>
+                <button (click)="getVerim('weekly')" type="button" class="btn btn-primary btn-round btn-sm">Haftalık</button> -->
+              <!-- </div> -->
+              <div echarts [options]="verim_graph" class="graph m-b-20"></div>
+            
+          <!-- </div> -->
+      </div>
+    </div>
+
+
+    <div  class="col-lg-12 col-md-12">
+      <div class="card">
+          <div class="header">
+              <h2 class="text-white">{{set_name}}</h2>
+              
+          </div>
+
+          <div class="body">
+              
+              <!-- <div class="btn-group"> -->
+                <button (click)="getSet('hourly')" type="button" class="btn btn-primary btn-round btn-sm">Saatlık</button>
+                <button (click)="getSet('daily')" type="button" class="btn btn-primary btn-round btn-sm">Günlük</button>
+                <button (click)="getSet('weekly')" type="button" class="btn btn-primary btn-round btn-sm">Haftalık</button>
+              <!-- </div> -->
+              <div echarts [options]="set_graph" class="graph m-b-20"></div>
+            
+          </div>
+      </div>
+    </div>
+  </div>
+
+</div>

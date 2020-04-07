@@ -1,0 +1,27 @@
+<form [formGroup]="inputForm" (ngSubmit)="saveModule()" novalidate>
+    <div class="form-group">
+      <mat-form-field appearance="outline" style="width: 120px">
+        <mat-label>Modül Kodu</mat-label>
+        <input matInput placeholder="Modül Kodu" formControlName="moduleCode"  [minlength]="3"  [maxlength]="3" required>
+        <mat-error *ngIf="hasError('moduleCode','required')">Modül Kodu Giriniz</mat-error>
+        <mat-error *ngIf="hasError('moduleCode','minlength')">
+          Modül Kodu 3 karakter uzunluğunda olmalı!
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="form-group">
+      <mat-form-field appearance="outline" style="width: 500px">
+        <mat-label>Modül Adı</mat-label>
+        <input matInput placeholder="Modül Adı" formControlName="moduleName" required>
+        <mat-error *ngIf="hasError('moduleName','required')">Modül Adı Giriniz</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="btn-toolbar">
+      <button mat-stroked-button  class="btn btn-default"  type="reset"  (click)="reset()">Yeni</button>
+      <button mat-stroked-button  class="btn btn-default"  type="submit" [disabled]="!inputForm.valid">Kaydet</button>
+      <button mat-stroked-button  class="btn btn-default" color="warn"  type ="reset" (click)="onNoClick()">Vazgeç</button>
+    </div>
+    
+  </form>
+  
+  

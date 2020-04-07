@@ -1,0 +1,187 @@
+<mat-nav-list>
+  <div class="profile-card">
+      <div class="header">
+          <b class="text-white">Alpplas</b>
+          <br>
+          <a class="text-white">enerji@alpplas.com</a>
+      </div>
+      <img src="assets/img/fabrika1.jpeg" alt="user">
+  </div>
+
+ <!-- test -->
+
+
+  <mat-divider></mat-divider>
+
+  <!-- test2 -->
+
+  <a  class="text-white" mat-list-item routerLink="/home"><mat-icon class="text-white">assessment</mat-icon>Kontrol Paneli</a>
+    <mat-expansion-panel  [class.mat-elevation-z0]="true" dense *ngIf="isAdmin" >
+      <mat-expansion-panel-header >
+        <mat-panel-title>
+          Tanımlamalar
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <mat-nav-list dense>
+        <a mat-list-item routerLink="/metric"><mat-icon>vpn_key</mat-icon>Metric Tanımlama</a>
+      </mat-nav-list>
+      <mat-nav-list dense>
+        <a mat-list-item routerLink="/screen"><mat-icon>vpn_key</mat-icon>Ekran Tanımlama</a>
+      </mat-nav-list>
+      <mat-nav-list dense>
+        <a mat-list-item routerLink="/attribute"><mat-icon>person</mat-icon>Özellik Tanımlama</a>
+      </mat-nav-list>
+      <mat-nav-list dense>
+        <a mat-list-item routerLink="/equipment" ><mat-icon>person</mat-icon>Ekipman Tanımlama</a>
+      </mat-nav-list>
+      <mat-nav-list dense>
+        <a mat-list-item routerLink="/measurementPoint" ><mat-icon>person</mat-icon>Ölçüm Noktası Tanımlama</a>
+      </mat-nav-list>
+      <mat-nav-list dense>
+        <mat-expansion-panel [class.mat-elevation-z0]="true" dense>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Ölçüm Konfigürasyon
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-nav-list dense>
+            <a mat-list-item routerLink="/customer_equipment"><mat-icon>person</mat-icon>Müşteriye Ekipman Tanımlama</a>
+          </mat-nav-list>
+          <mat-nav-list dense>
+            <a mat-list-item   routerLink="/customer_measurement_point"><mat-icon>person</mat-icon>Müşteri  Ölçüm Noktası Tanımlama</a>
+          </mat-nav-list>
+        </mat-expansion-panel>
+      </mat-nav-list>
+      <mat-nav-list dense>
+        <mat-expansion-panel [class.mat-elevation-z0]="true" dense>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Roller
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-nav-list dense>
+            <a mat-list-item  routerLinkActive="active-link"><mat-icon>person</mat-icon>Rol Tanımlama</a>
+          </mat-nav-list>
+          <mat-nav-list dense>
+            <a mat-list-item  routerLinkActive="active-link"><mat-icon>person</mat-icon>Rol Ekranı Tanımlama</a>
+          </mat-nav-list>
+        </mat-expansion-panel>
+      </mat-nav-list>
+      <mat-nav-list dense>
+        <mat-expansion-panel [class.mat-elevation-z0]="true" dense>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Modüler
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-nav-list dense>
+            <a mat-list-item routerLink="/module"><mat-icon>person</mat-icon>Modül Tanımlama</a>
+          </mat-nav-list>
+          <mat-nav-list dense>
+            <a mat-list-item routerLink="/module_screen" ><mat-icon>person</mat-icon>Modül Ekranı Tanımlama</a>
+          </mat-nav-list>
+        </mat-expansion-panel>
+      </mat-nav-list>
+      <mat-nav-list dense>
+        <mat-expansion-panel [class.mat-elevation-z0]="true" dense>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Müşteriller
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-nav-list dense>
+            <a mat-list-item routerLink="/customer" ><mat-icon>person</mat-icon>Müşteri Tanımlama</a>
+          </mat-nav-list>
+          <mat-nav-list dense>
+            <a mat-list-item routerLinkActive="active-link"><mat-icon>person</mat-icon>Müşteri Kullancısı Tanımlama</a>
+          </mat-nav-list>
+          <mat-nav-list dense>
+            <a mat-list-item routerLinkActive="active-link"><mat-icon>person</mat-icon>Müşteri Modülü Tanımlama</a>
+          </mat-nav-list>
+        </mat-expansion-panel>
+      </mat-nav-list>
+
+
+    </mat-expansion-panel>
+    <mat-expansion-panel  [class.mat-elevation-z0]="true" dense>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Dashboard
+        </mat-panel-title>
+        
+      </mat-expansion-panel-header>
+      <mat-nav-list dense>
+        <!-- <a mat-list-item routerLink="/dashboard/index"><mat-icon>dashboard</mat-icon>Dashboard 1 </a> -->
+        <a mat-list-item href="http://angular-deployment-app.s3-website-us-east-1.amazonaws.com/dashboard/index4"> <mat-icon>dashboard</mat-icon>Dashboard 1 </a>
+      </mat-nav-list>
+      <mat-nav-list dense>
+        <a mat-list-item routerLink="/dashboard/index2"><mat-icon>dashboard</mat-icon>Dashboard 2</a>
+      </mat-nav-list>
+      <mat-nav-list dense>
+        <a mat-list-item routerLink="/dashboard/index3"><mat-icon>person</mat-icon>Third Index</a>
+      </mat-nav-list>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel  [class.mat-elevation-z0]="true" dense>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Alarm
+        </mat-panel-title>
+        
+      </mat-expansion-panel-header>
+      <mat-nav-list dense>
+        <a mat-list-item routerLink="/alarm/alarm-list"  ><mat-icon>notification_important</mat-icon>Alarm</a>
+      </mat-nav-list>
+      <mat-nav-list dense>
+        <a mat-list-item routerLink="/alarm/alarm-operations"  ><mat-icon>add_alert</mat-icon>Alarm Tanımlama</a>
+      </mat-nav-list>
+      <mat-nav-list dense>
+        <a mat-list-item routerLink="/alarm/alarm-notification"  ><mat-icon>add_alert</mat-icon>Alarm Tanımlama2</a>
+      </mat-nav-list>
+      <mat-nav-list dense>
+        <a mat-list-item routerLink="/alarm/alarm-report"  ><mat-icon>timeline</mat-icon>Alarm Raporlama</a>
+      </mat-nav-list>
+      <mat-nav-list dense>
+        <a mat-list-item routerLink="/alarm/alarm-report"  ><mat-icon>list</mat-icon>Alarm Listesi</a>
+      </mat-nav-list>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel  [class.mat-elevation-z0]="true" dense>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          KPI
+        </mat-panel-title>
+        
+      </mat-expansion-panel-header>
+      <mat-nav-list dense>
+        <a mat-list-item routerLink="/kpi/kpi-operations"  ><mat-icon>vpn_key</mat-icon>KPI Tanımlama</a>
+      </mat-nav-list>
+      
+    </mat-expansion-panel>
+
+    <a  class="text-white"mat-list-item (click)="logOut()" ><mat-icon class="text-white" >exit_to_app</mat-icon>Çıkış</a>
+
+
+  <mat-divider></mat-divider>
+
+  <!-- <h2 matSubheader>Pages</h2>
+
+  <a class="text-white" mat-list-item routerLinkActive="list-item-active" routerLink="/">Dashboard</a>
+  <a class="text-white" mat-list-item routerLinkActive="list-item-active" routerLink="/posts">Posts</a>
+  <a class="text-white" mat-list-item routerLinkActive="list-item-active" routerLink="/articles">Articles</a>
+
+  <mat-divider></mat-divider>
+
+  <h2 class="text-white" matSubheader>Tools</h2>
+
+  <a class="text-white" mat-list-item routerLinkActive="list-item-active" routerLink="/contacts">
+      <mat-icon class="text-white"> import_contacts</mat-icon>
+      Contacts
+  </a>
+
+  <a class="text-white" mat-list-item routerLinkActive="list-item-active" routerLink="/contacts">
+      <mat-icon class="text-white" >contact_phone</mat-icon>
+      Leads
+  </a> -->
+
+</mat-nav-list>

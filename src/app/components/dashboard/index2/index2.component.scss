@@ -1,0 +1,61 @@
+.card {
+    background: #373E46;
+  }
+
+.row.clearfix {
+    background : 	#2F3640;
+}
+
+.block-header {
+
+    background : 	#2F3640;
+
+}
+
+.row {
+    background : 	#2F3640;
+}
+
+.col-lg-6.col-md-6.col-sm-12{
+    background : 	#2F3640;
+
+}
+
+.breadcrumb.p-l-0.p-b-0 {
+    background : 	#2F3640;
+}
+
+.body.text-center.gauge {
+    
+    height: 350px;
+}
+.col-6{
+    height: 150px;
+    width: 150px;
+}
+
+.container-fluid {
+
+    display : inline-block;
+
+}
+
+.widgets {
+    
+    display : inline-block;
+}
+
+/* H2 FOnts */
+
+$margin-base-vertical:         15px !default;
+
+$font-size-h2:                 2.5em        !default;
+
+.h2{
+    font-size: $font-size-h2;
+    margin-bottom: $margin-base-vertical * 2;
+}
+
+#dashboard_title {
+    color: #bdbdbd;
+}

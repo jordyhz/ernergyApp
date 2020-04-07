@@ -1,0 +1,44 @@
+<h3 style="text-align: center;color: white;background-color: steelblue;">Metric Tanımlamaları </h3>
+
+<form [formGroup]="inputForm" (ngSubmit)="saveMetric()" novalidate>
+    <div class="form-group">
+        <mat-form-field appearance="outline" style="width: 150px">
+          <mat-label>Metric Id</mat-label>
+          <input matInput placeholder="Metric Id" formControlName="id" required>
+          <mat-error *ngIf="inputCheck('id').hasError('required')">Metric Id giriniz</mat-error>
+
+        </mat-form-field>
+      </div>
+    <div class="form-group">
+      <mat-form-field appearance="outline" style="width: 300px">
+        <mat-label>Metric Adı</mat-label>
+        <input matInput placeholder="Metric Adı" formControlName="metricName" required>
+        <!-- <mat-error *ngIf="hasError('name','required')">Metric adını giriniz</mat-error> -->
+        <!-- <mat-error *ngIf="nameCtrl.hasError('required')">Metric adını giriniz</mat-error> -->
+        <mat-error *ngIf="inputCheck('metricName').hasError('required')">Metric adı giriniz</mat-error>
+
+      </mat-form-field>
+    </div>
+    <div class="form-group">
+      <mat-form-field appearance="outline" style="width: 600px">
+        <mat-label>Metric SQL Statment</mat-label>
+        <textarea matInput placeholder="SQL Statement" formControlName="sqlStatement"></textarea>
+        <mat-error *ngIf="inputCheck('sqlStatement').hasError('required')">Sql en az 10 hane giriniz</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="form-group">
+        <mat-form-field appearance="outline" style="width: 600px">
+          <mat-label>Metric Açıklama</mat-label>
+          <textarea matInput placeholder="Metric Açıklama" formControlName="metricDesc" maxlength="100"></textarea>
+        </mat-form-field>
+      </div>
+    <div class="btn-toolbar">
+      <button mat-stroked-button  class="btn btn-default"  type="reset"  (click)="reset()">Temizle</button>
+      <button mat-stroked-button  class="btn btn-default"  type="submit" [disabled]="!inputForm.valid">Kaydet</button>
+      <button mat-stroked-button  class="btn btn-default" color="warn"  type ="reset" (click)="onNoClick()">Vazgeç</button>
+    </div>
+  
+  </form>
+  
+  
+  

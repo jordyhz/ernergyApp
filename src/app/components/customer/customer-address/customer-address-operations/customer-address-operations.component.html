@@ -1,0 +1,81 @@
+<div class="row">
+<div class="column">
+<form [formGroup]="inputForm" (ngSubmit)="saveAddress()" novalidate>
+   <div class="form-group">
+     <mat-label>{{customer.cusName}}</mat-label>
+   </div>
+   <div class="form-group">
+     <mat-form-field>
+       <mat-label>Adres Tipi</mat-label>
+       <select matNativeControl formControlName="addressType" required #singleSelect>
+         <option value="" selected></option>
+         <option value="1">Ev adresi</option>
+         <option value="2">iş adresi</option>
+       </select>
+     </mat-form-field>
+   </div>
+   <div class="form-group">
+     <mat-form-field appearance="outline" style="width: 500px">
+       <mat-label>Müşteri Adresi</mat-label>
+       <input matInput placeholder="Müşteri Adresi" formControlName="addressLine"  maxlength="100" required>
+     </mat-form-field>
+   </div>
+   <div class="form-group">
+   <mat-form-field>
+     <mat-label>Ülke Adı</mat-label>
+     <mat-select formControlName="countryId" required #singleSelect>
+       <mat-option>
+         <ngx-mat-select-search formControlName="countryValue" placeholderLabel="Ülke bul..."  noEntriesFoundLabel="Ülke bulunamadı"></ngx-mat-select-search>
+       </mat-option>
+       <mat-option *ngFor="let row of filteredCountries | async" [value]="row.id">
+         {{row.value}}
+       </mat-option>
+     </mat-select>
+   </mat-form-field>
+ </div>
+   <div class="form-group">
+     <mat-form-field>
+       <mat-label>İl Adı</mat-label>
+       <mat-select formControlName="cityId" required #singleSelect>
+         <mat-option>
+           <ngx-mat-select-search formControlName="cityValue" placeholderLabel="İl bul..."  noEntriesFoundLabel="İl bulunamadı"></ngx-mat-select-search>
+         </mat-option>
+         <mat-option *ngFor="let row of filteredCities | async" [value]="row.id">
+           {{row.value}}
+         </mat-option>
+       </mat-select>
+     </mat-form-field>
+   </div>
+   <div class="form-group">
+     <mat-form-field appearance="outline" style="width: 500px">
+       <mat-label>Telefon Numarası 1</mat-label>
+       <input matInput placeholder="Telefon No" formControlName="phone1" required maxlength="10" type="tel">
+     </mat-form-field>
+   </div>
+   <div class="form-group">
+     <mat-form-field appearance="outline" style="width: 500px">
+       <mat-label>Telefon Numarası 2</mat-label>
+       <input matInput placeholder="Telefon No" formControlName="phone2"  maxlength="10" type="tel">
+     </mat-form-field>
+   </div>
+   <div class="form-group">
+     <mat-form-field appearance="outline" style="width: 500px">
+       <mat-label>Posta Kodu</mat-label>
+       <input matInput placeholder="Zip Code" formControlName="zipCode" maxlength="10" type="tel">
+     </mat-form-field>
+   </div>
+
+
+   <div class="btn-toolbar">
+     <button mat-stroked-button  class="btn btn-default"  type="reset"  (click)="reset()">Yeni</button>
+     <button mat-stroked-button  class="btn btn-default"  type="submit" [disabled]="!inputForm.valid">Kaydet</button>
+     <button mat-stroked-button  class="btn btn-default" color="warn"  type ="reset" (click)="close()">Vazgeç</button>
+   </div>
+</form>
+</div>
+<div class="column">
+ <form  novalidate>
+ <app-customer-address-list [customerId]="customer.id" (onUpdate)="onUpdate($event)"  (onDelete)="reset()"></app-customer-address-list>
+ </form>
+</div>
+</div>

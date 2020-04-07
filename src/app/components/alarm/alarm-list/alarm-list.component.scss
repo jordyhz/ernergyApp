@@ -1,0 +1,84 @@
+.k-gauge {
+  display: block;
+}
+
+.card {
+  background: #373E46;
+  
+}
+
+.row.clearfix {
+  background : 	#2F3640;
+}
+
+.block-header {
+
+  background : 	#2F3640;
+
+}
+
+.row {
+  background : 	#2F3640;
+}
+
+.col-lg-6.col-md-6.col-sm-12{
+  background : 	#2F3640;
+
+}
+
+.breadcrumb.p-l-0.p-b-0 {
+  background : 	#2F3640;
+}
+
+.body.text-center.gauge {
+  
+  height: 350px;
+}
+.col-6{
+  height: 150px;
+  width: 150px;
+}
+
+.jumbotron {
+  background : 	#2F3640;
+}
+
+.mat-table{
+
+//  background : 	#2F3640;
+background-color : #30373F;
+
+  
+}
+
+.mat-paginator {
+  background: #373E46;
+}
+
+.mat-header-cell {
+  color: white;
+  border-radius: 25px;
+}
+
+.mat-paginator {
+  color: white;
+}
+
+.mat-slide-toggle {
+  float: right;
+}
+
+
+// table { border-collapse: separate; width: 100%; }
+// td { border: solid 1px #000; border-right : 0px; border-left : 0px }
+// tr td:first-child { border-top-left-radius: 10px; }
+// tr td:first-child { border-bottom-left-radius : 10px}
+// tr td:last-child  { border-top-right-radius: 10px}
+// tr td:last-child  { border-bottom-right-radius: 10px}
+
+table { border-collapse: separate; width: 100%; }
+td { border: solid 1px #000; border-right : 0px; border-left : 0px }
+.mat-cell:first-child { border-top-left-radius: 25px; }
+.mat-cell:first-child { border-bottom-left-radius : 25px}
+.mat-cell:last-child  { border-top-right-radius: 25px}
+.mat-cell:last-child  { border-bottom-right-radius: 25px}

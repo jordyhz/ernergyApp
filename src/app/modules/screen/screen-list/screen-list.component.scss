@@ -1,0 +1,116 @@
+@media screen and (max-width: 960px) {
+  .mat-table {
+    border: 0;
+    vertical-align: middle
+  }
+
+  .mat-table caption {
+    font-size: 1em;
+  }
+
+  /*  Enable this to hide header
+  .mat-table .mat-header-cell {
+
+    border: 10px solid;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  */
+  .mat-table .mat-row {
+    border-bottom: 5px solid #ddd;
+    display: block;
+  }
+  /*
+  .mat-table .mat-row:nth-child(even) {background: #CCC}
+  .mat-table .mat-row:nth-child(odd) {background: #FFF}
+  */
+  .mat-table .mat-cell {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: 1em;
+    text-align: right;
+    font-weight: bold;
+    height:30px;
+    margin-bottom: 4%;
+  }
+  .mat-table .mat-cell:before {
+    /*
+    * aria-label has no advantage, it won't be read inside a table
+    content: attr(aria-label);
+    */
+    content: attr(data-label);
+    float: left;
+    text-transform: uppercase;
+    font-weight: normal;
+
+    font-size: .85em;
+  }
+  .mat-table .mat-cell:last-child {
+    border-bottom: 0;
+  }
+  .mat-table .mat-cell:first-child {
+    margin-top: 4%;
+  }
+}
+
+.customerList-container{
+  border-style: solid;
+  border-color: #3F51B5;
+}
+
+.mat-table{}
+
+.header{
+  background: #3F51B5;
+  height: 45px;
+}
+
+.mat-18{
+  color: black;
+}
+
+.mat-17{
+  color: black;
+}
+
+
+.mt-3{
+  background: #3F51B5 ;
+  border-radius: 4px;
+  color: white;
+  
+  
+}
+
+
+.mt-1{
+  color : white;
+  background-color: #3F51B5; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 4px;
+}
+
+.mt-1:hover {
+    background:  rgb(42, 60, 157) ;
+}
+
+#jum{
+  margin: 0;
+  padding: 0;
+  
+}
+
+.jumbotron{
+  margin: 0;
+  padding: 0;
+}

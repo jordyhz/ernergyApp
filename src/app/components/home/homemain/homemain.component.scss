@@ -1,0 +1,92 @@
+
+.text-white {
+    color: #fff;
+  }
+  
+  .text-red {
+    color: #ff1744;
+  }
+  .text-green {
+    color: #00c853;
+  }
+  
+  .met-icon-white {
+    color: white;
+  }
+  
+  //  iconların olduğu kısım
+  
+  .mat-tab-group {
+   // background-color: #25093f;
+   background-color:#222222;
+  }
+  
+  // ana ölçüm noktası başlıkları paneli  tam neresi belli değil değişmiyo
+  
+  .mat-expansion-panel-header {
+    height: 40px !important;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+   // font-weight: bold;
+    color: red($color: #000000);
+    background-color: #333333;
+  }
+  
+  .system-title  {
+    color: whitesmoke;
+    font-size: 22px;
+  
+  }
+  
+  // ana ölçüm noktası başlıkları
+  .paneltitle {
+    font-size: 20px ;
+    //font-weight: bold;
+    color: whitesmoke ;
+    text-align: left;
+    //font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .card-title {
+    font-size: medium ;
+    color: palegoldenrod;
+    text-align: left;
+  }
+  //Kartların panelinin arkası kart arkaları ile aynı
+  .mat-expansion-panel  {
+    background-color:#222222;
+  }
+  
+  // kartların arkası
+  .row m-0 {
+    background-color:lightslategrey;
+  }
+  // kartlar
+  .card {
+    background-color: #333333;
+  }
+  
+  #tagvalue {
+    color: yellow;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: right;
+    
+  }
+  
+  #tagname {
+    color:blue($color: #837575);
+    font-size: 13px;
+    text-align: left;
+  
+  }
+  #tagunit {
+   // padding-left: 10px;
+    text-align: left;
+    font-style: italic;
+    font-size: 11px;
+  
+  }
+  #back_card_tag_value {
+      font-size: 13px;  
+  }

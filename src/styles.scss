@@ -1,0 +1,124 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~aws-amplify-angular/theme.css';
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.amplify-form-button {
+  margin-top: -15px;
+  margin-right: 25px;
+}
+
+.mat-toolbar {
+  z-index: 9 !important;
+}
+.mat-toolbar span {
+  color: #fff;
+}
+
+p {
+  height: inherit !important;
+}
+
+
+#footer{
+  background: #3F51B5;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
+}
+
+
+/*   From Square */
+
+/* You can add global styles to this file, and also import other style files */
+.form-control.header-search {
+  height: auto;
+  width: 1%;
+  flex: 1 1 auto;
+}
+.sidebar,.cwidget-scroll {
+  overflow-y: scroll;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE 10+ */
+}
+.sidebar::-webkit-scrollbar,.cwidget-scroll::-webkit-scrollbar { /* WebKit */
+  width: 0px;
+}
+.menu_sm .sidebar{
+  overflow: visible;
+}
+.sidebar .menu .list .ml-menu li.active a {
+  font-weight: 600;
+}
+
+.form-group .form-control{
+  height: auto;
+}
+
+.form-group .has-success:after, .has-danger:after{
+  top:10px;
+}
+
+.required .error{
+  color: #de4848;
+  font-size: 0.8em;
+  margin-top: 3px;
+  margin-left: 19px;
+}
+.input-group.calendar .dropdown-menu.show{
+  width: 230px;
+}
+.input-group.calendar .form-control{
+  border-radius: 30px !important;
+}
+.input-group.calendar span + .form-control{
+  border-top-left-radius: 0px !important;
+  border-bottom-left-radius: 0px !important;
+  border-left: 0;
+}
+.cwidget-scroll {
+  position: relative;
+  max-height: 304px;
+}
+.panel-group.accordion>.card {
+  margin-bottom: 0px;
+}
+.panel-group.accordion .card-header {
+  padding: 0
+}
+.panel-group.accordion .card-header .btn-link{
+  background-color: #f5f5f5;
+  font-weight: 400;
+  color: #757575;
+  font-size: 16px;
+}
+.nav-pills {
+  border: 0;
+  padding: 15px .7rem;
+}
+.echart-line-chart {
+  height: 2em;
+  width: 8em;
+}
+.echart-line-chart-area {
+  height: 50px;
+}
+
+.tablist-main .nav-tabs{
+  padding: 15px 0;
+}
+
+.echart-line-chart-tiles {
+  height: 135px;
+}
+// html, body { height: 100%; }
+// body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+/* Headers */
+
+

@@ -1,0 +1,18 @@
+<!-- <div class="container" style="width: 100%"> -->
+  <!-- <input [(ngModel)]="customerId">  {{customerId}} !.. -->
+  <!-- <div class="row">
+    <div class="col-md-12">
+      <div #gmap style="width:100%;height:700px"></div>
+    </div>
+  </div> -->
+<!-- </div> -->
+
+<input [(ngModel)]="customerId">  {{customerId}}
+
+
+<agm-map [latitude]="ist_latitude" [longitude]="ist_longitude">
+  <agm-marker [latitude]="ist_latitude" [longitude]="ist_longitude" [iconUrl]='icon' (markerClick)="customer27($event)"></agm-marker>
+  <agm-marker [latitude]="izm_latitude" [longitude]="izm_longitude" [iconUrl]='icon2' (markerClick)="customer25($event)"></agm-marker>
+  <agm-marker [latitude]="bolu_latitude" [longitude]="bolu_longitude" [iconUrl]='icon3' (markerClick)="customer4($event)"></agm-marker>
+
+</agm-map>

@@ -1,0 +1,47 @@
+
+<form [formGroup]="inputForm" (ngSubmit)="saveCustomer()" novalidate>
+  <div class="form-group">
+    <mat-form-field appearance="outline" style="width: 120px">
+      <mat-label>Müşteri Kodu</mat-label>
+      <input matInput placeholder="Müşteri Kodu" formControlName="cusCode"  [minlength]="3"  [maxlength]="6" required>
+      <mat-error *ngIf="hasError('cusCode','required')">Müşteri Kodu Giriniz</mat-error>
+      <mat-error *ngIf="hasError('cusCode','minlength')">
+        Müşteri Kodu 3 karakter uzunluğunda olmalı!
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <div class="form-group">
+    <mat-label>Bağlı olduğu müşteri : {{parentCusName}}</mat-label>
+  </div>
+  <div class="form-group">
+    <mat-label>Seviyesi : {{cusLevel}}</mat-label>
+  </div>
+  <div class="form-group">
+    <mat-form-field appearance="outline" style="width: 500px">
+      <mat-label>Müşteri Adı</mat-label>
+      <input matInput placeholder="Müşteri Adı" formControlName="cusName"  [maxlength]="100" required>
+      <mat-error *ngIf="hasError('cusName','required')">Müşteri Adı Giriniz</mat-error>
+    </mat-form-field>
+  </div>
+  <div class="form-group">
+    <mat-form-field>
+      <mat-label>Sektör Adı</mat-label>
+      <mat-select formControlName="sectorId" #singleSelect>
+        <mat-option>
+          <ngx-mat-select-search formControlName="sectorValue" placeholderLabel="Sektör bul..."  noEntriesFoundLabel="Kayıt bulunamadı"></ngx-mat-select-search>
+        </mat-option>
+        <mat-option *ngFor="let row of filteredSectors | async" [value]="row.id">
+          {{row.value}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="form-group">
+    <mat-checkbox formControlName="active">Aktif</mat-checkbox>
+  </div>
+  <div class="btn-toolbar">
+    <button mat-stroked-button  class="btn btn-default"  type="reset"  (click)="reset()">Yeni</button>
+    <button mat-stroked-button  class="btn btn-default"  type="submit" [disabled]="!inputForm.valid">Kaydet</button>
+    <button mat-stroked-button  class="btn btn-default" color="warn"  type ="reset" (click)="close()">Vazgeç</button>
+  </div>
+</form>

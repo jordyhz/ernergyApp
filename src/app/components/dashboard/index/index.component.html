@@ -1,0 +1,201 @@
+<div class="block-header">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12">
+            <h2 id="dashboard_title">Elektrik İzleme Sistemi</h2>
+            <ul class="breadcrumb p-l-0 p-b-0 ">
+                <li class="breadcrumb-item"><a [routerLink]="['/dashboard']"><i class="zmdi zmdi-home"></i>Dashboard</a></li>
+                <li class=" breadcrumb-item active">Ana Dashboard</li>
+            </ul>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 text-right">
+            
+        </div>
+    </div>
+  </div>
+  
+  <div class="container-fluid">
+    <div id="row" class="row clearfix">
+      
+           
+      <div class="col-lg-4 col-md-4 col-md-12"><div  class="card">
+          
+          <div class="body text-center gauge">
+              
+              <h4 class="margin-0"  >{{firstGauge_metricname}}</h4>
+              <h6 class="m-b-20" > {{firstGauge_value}}  Hz</h6>
+          
+              <div   > <kendo-radialgauge style="width: 100%; height: 100%;"  #radial  [pointer]="{ value: firstGauge_value }">
+                <kendo-radialgauge-scale [majorTicks]="{ visible: true, color: secondTicksColors }" [minorTicks]="{ visible: true, color: secondTicksColors }" [min]="49" [max]="51">
+                    <kendo-radialgauge-scale-ranges>
+                        <kendo-radialgauge-scale-range [from]="25" [to]="50" color="#ffc700">
+                        </kendo-radialgauge-scale-range>
+                        <kendo-radialgauge-scale-range [from]="50" [to]="75" color="#ff7a00">
+                        </kendo-radialgauge-scale-range>
+                        <kendo-radialgauge-scale-range [from]=" 75" [to]="100" color="#c20000">
+                        </kendo-radialgauge-scale-range>
+                    </kendo-radialgauge-scale-ranges>
+                    <kendo-arcgauge-scale-labels [color]="secondTicksColors">
+                    </kendo-arcgauge-scale-labels>
+                </kendo-radialgauge-scale>
+          </kendo-radialgauge></div>
+              
+          </div>
+      </div></div>
+      <div class="col-lg-4 col-md-4 col-md-12"><div id="test2" class="card">
+          
+          <div class="body text-center gauge">
+              <h4 class="margin-0" >{{secondGauge_metricname}}</h4>
+              <h6 class="m-b-20" >{{secondGauge_value}} KW/H</h6>
+              <div class="mr-auto ml-auto" style="height: 200px;"><kendo-radialgauge [pointer]="{ value: secondGauge_value }" >
+                  <kendo-radialgauge-scale [majorTicks]="{ visible: true, color: secondTicksColors }" [minorTicks]="{ visible: true, color: secondTicksColors }"  [max]="500">
+                      <kendo-radialgauge-scale-ranges>
+                          <kendo-radialgauge-scale-range [from]="125" [to]="250" color="#ffc700">
+                          </kendo-radialgauge-scale-range>
+                          <kendo-radialgauge-scale-range [from]="250" [to]="375" color="#ff7a00">
+                          </kendo-radialgauge-scale-range>
+                          <kendo-radialgauge-scale-range [from]="375" [to]="500" color="#c20000">
+                          </kendo-radialgauge-scale-range>
+                      </kendo-radialgauge-scale-ranges>
+                      <kendo-arcgauge-scale-labels [color]="secondTicksColors">
+                      </kendo-arcgauge-scale-labels>
+                  </kendo-radialgauge-scale>
+              </kendo-radialgauge></div>
+              
+              <div style="height: 80px;"></div>
+              <h6 class="m-t-15 p-b-15"></h6>
+          </div>
+      </div>
+  </div>
+      <div class="col-lg-4 col-md-4 col-md-12"><div class="card">
+          
+          <div class="body text-center gauge">
+              <h4 class="margin-0"  >Toplam Maliyet</h4>
+              <h6 class="m-b-20" >190.4 ₺</h6>
+              <div  class="mr-auto ml-auto" style="height: 200px;"><kendo-radialgauge #radial [pointer]="{ value: 190.4 }"  [scale]="{ max: 500 }">
+                <kendo-radialgauge-scale [majorTicks]="{ visible: true, color: secondTicksColors }" [minorTicks]="{ visible: true, color: secondTicksColors }"  [max]="500">
+                    <kendo-radialgauge-scale-ranges>
+                        <kendo-radialgauge-scale-range [from]="125" [to]="250" color="#ffc700">
+                        </kendo-radialgauge-scale-range>
+                        <kendo-radialgauge-scale-range [from]="250" [to]="375" color="#ff7a00">
+                        </kendo-radialgauge-scale-range>
+                        <kendo-radialgauge-scale-range [from]="375" [to]="500" color="#c20000">
+                        </kendo-radialgauge-scale-range>
+                    </kendo-radialgauge-scale-ranges>
+                    <kendo-arcgauge-scale-labels [color]="secondTicksColors">
+                    </kendo-arcgauge-scale-labels>
+                </kendo-radialgauge-scale>
+              </kendo-radialgauge></div>
+              
+              <div  style="height: 80px;"></div>
+              <h6 class="m-t-15 p-b-15"></h6>
+          </div>
+      </div></div>
+         
+    </div>
+  
+</div>
+  <div class="container-fluid">
+      <div id="sts" class="row clearfix" >
+  
+          <div  class="col-lg-12 col-md-12">
+              <div class="card">
+                  <div class="header">
+                      <h2 class="text-white">{{voltajName}}</h2>
+                      
+                  </div>
+
+                  <div class="body">
+                    <!-- <button class="btn btn-primary btn-round btn-sm">Week</button>
+                    <button class="btn btn-primary btn-round btn-sm">Month</button>
+                    <button class="btn btn-primary btn-round btn-sm">Year</button> -->
+                      <!-- <div class="btn-group"> -->
+                        <button (click)="getVoltajValue('hourly')" type="button" class="btn btn-primary btn-round btn-sm">Saatlık</button>
+                        <button (click)="getVoltajValue('daily')" type="button" class="btn btn-primary btn-round btn-sm">Günlük</button>
+                        <button (click)="getVoltajValue('weekly')" type="button" class="btn btn-primary btn-round btn-sm">Haftalık</button>
+                      <!-- </div> -->
+                      <div echarts [options]="voltajChart_Option" class="graph m-b-20"></div>
+                    
+                  </div>
+              </div>
+          </div>
+  
+          <div class="col-lg-12 col-md-12">
+              <div class="card">
+                  <div class="header">
+                      <h2 class="text-white"> {{akimName}} </h2>
+                  </div>
+                  <div class="body">
+
+                   
+                    <!-- <div class="btn-group"> -->
+                        <button (click)="getakimValue('hourly')" type="button" class="btn btn-primary btn-round btn-sm">Saatlık</button>
+                        <button (click)="getakimValue('daily')" type="button" class="btn btn-primary btn-round btn-sm">Günlük</button>
+                        <button (click)="getakimValue('weekly')" type="button" class="btn btn-primary btn-round btn-sm">Haftalık</button>
+                      <!-- </div> -->
+                      <div echarts [options]="akimChart_Option"></div>
+                      
+                  </div>
+              </div>
+          </div>
+  
+          <div class="col-lg-12 col-md-12">
+              <div class="card">
+                  <div class="header">
+                      <h2 class="text-white"> {{frekansName}}</h2>
+                  </div>
+                  <div class="body">
+                   
+                    <!-- <div class="btn-group"> -->
+                        <button (click)="getfrekansvalue('hourly')" type="button" class="btn btn-primary btn-round btn-sm">Saatlık</button>
+                        <button (click)="getfrekansvalue('daily')" type="button" class="btn btn-primary btn-round btn-sm">Günlük</button>
+                        <button (click)="getfrekansvalue('weekly')" type="button" class="btn btn-primary btn-round btn-sm">Haftalık</button>
+                      <!-- </div> -->
+                      <div echarts [options]="frekansChart_Option"></div>
+                      
+                  </div>
+              </div>
+          </div>
+
+          <div class="col-lg-12 col-md-12">
+            <div class="card">
+                <div class="header">
+                    <h2 class="text-white"> {{powerName}}</h2>
+                </div>
+                <div class="body">
+                 
+                  <!-- <div class="btn-group"> -->
+                    <button (click)="getPowerValue('hourly')" type="button" class="btn btn-primary btn-round btn-sm">Saatlık</button>
+                    <button (click)="getPowerValue('daily')" type="button" class="btn btn-primary btn-round btn-sm">Günlük</button>
+                    <button (click)="getPowerValue('weekly')" type="button" class="btn btn-primary btn-round btn-sm">Haftalık</button>
+                  <!-- </div> -->
+                    <div echarts [options]="powerChart_Option"></div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-12 col-md-12">
+            <div class="card">
+                <div class="header">
+                    <h2 class="text-white"> {{powersName}}</h2>
+                </div>
+                <div class="body">
+                 
+                  <!-- <div class="btn-group"> -->
+                    <button (click)="getPowersValue('hourly')" type="button" class="btn btn-primary btn-round btn-sm">Saatlık</button>
+                    <button (click)="getPowersValue('daily')" type="button" class="btn btn-primary btn-round btn-sm">Günlük</button>
+                    <button (click)="getPowersValue('weekly')" type="button" class="btn btn-primary btn-round btn-sm">Haftalık</button>
+                  <!-- </div> -->
+                    <div echarts [options]="powersChart_Option"></div>
+                    
+                </div>
+            </div>
+        </div>
+
+        
+          
+  
+         
+          
+      </div>
+  </div>

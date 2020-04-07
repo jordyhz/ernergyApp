@@ -1,0 +1,17 @@
+.btn.btn-default{
+  margin: 9px;
+  border-style: 3px solid;
+  border-color: #3F51B5;
+}
+.column {
+  float: left;
+  width: 50%;
+  padding: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}

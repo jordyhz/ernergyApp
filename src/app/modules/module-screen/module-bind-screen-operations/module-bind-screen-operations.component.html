@@ -1,0 +1,58 @@
+
+<div class="customerList-header" fxLayout="row">
+    <mat-form-field>
+      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+    </mat-form-field>
+  </div>
+  
+  <div class="customerList-container">
+    <mat-spinner [style.display]="isLoading ? 'block' : 'none'"></mat-spinner>
+    <mat-table [style.display]="isLoading === false ? 'block' : 'none'" [dataSource]="dsScreens" matSort>
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> ID </mat-header-cell>
+        <mat-cell *matCellDef="let row" data-label="id"> {{row.id}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="cusCode">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Ekran Kodu </mat-header-cell>
+        <mat-cell *matCellDef="let row" data-label="Customer Code"> {{row.screenCode}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="cusName">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Ekran Adı </mat-header-cell>
+        <mat-cell *matCellDef="let row" data-label="Customer Name"> {{row.screenName}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="createdDate">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Oluşturma Tarihi </mat-header-cell>
+        <mat-cell *matCellDef="let row" [style.color]="row.color" data-label="Created Date"> {{row.createdDateTime.substring(0,10)}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="updatedDate">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Güncelleme Tarihi </mat-header-cell>
+        <mat-cell *matCellDef="let row" [style.color]="row.color" data-label="Updated Date"> {{row.updatedDateTime.substring(0,10)}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="bind">
+        <th mat-header-cell *matHeaderCellDef> Bind </th>
+        <td mat-cell *matCellDef="let row">
+          <!-- <mat-sli (click) = "wasClicked(row.id)" ></mat-slide-toggle> -->
+          <button mat-icon-button color="accent"  (click)="bindModuleToScreen(row.id)"><!--should call bindScreenToModule-->
+            <mat-icon class="mat-17">add</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+  
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;">
+      </mat-row>
+    </mat-table>
+  
+    <mat-paginator [style.display]="isLoading === false ? 'block' : 'none'" [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+
+ 
+     <button mat-stroked-button  class="btn btn-default" color="warn"  type ="reset" (click)="onNoClick()">Vazgeç</button>
+   
+  </div>
+  

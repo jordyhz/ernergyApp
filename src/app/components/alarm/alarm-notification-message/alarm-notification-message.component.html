@@ -1,0 +1,99 @@
+<h6 >Alarm Notification Message</h6>
+<hr>
+<form [formGroup]="inputForm" (ngSubmit)="saveAlarmNotif()">
+
+   
+
+        <div hidden class="form-group">
+            <mat-form-field appearance="outline" style="width: 300px">
+                <mat-label>alarmId:</mat-label>
+                <input matInput  formControlName="alarmNotification" [(ngModel)]="idpass"> 
+              </mat-form-field>
+            </div>
+
+            
+
+    <div class="form-group">
+    <mat-form-field appearance="outline" style="width: 300px">
+        <mat-label>Title:</mat-label>
+        <input matInput placeholder="Title" formControlName="title" maxlength="50" required>
+      </mat-form-field>
+    </div>
+
+    <div class="form-group">
+        <mat-form-field appearance="outline" style="width: 300px">
+            <mat-label>Name:</mat-label>
+            <input matInput placeholder="Name" formControlName="name" maxlength="50" required>
+          </mat-form-field>
+    
+    </div>
+
+    <div class="form-group">
+        <mat-form-field appearance="outline" style="width: 300px">
+            <mat-label>WhatsApp Phone:</mat-label>
+            <input [class.is-invalid] = "inputForm.get('wpPhone').invalid && inputForm.get('wpPhone').touched"
+             matInput placeholder="WhatsApp Phone" formControlName="wpPhone" maxlength="50" >
+          </mat-form-field>
+
+          <div *ngIf="(primNumber.invalid && primNumber.touched) || primNumber.dirty">
+            <small *ngIf="primNumber.errors?.required" class="text-danger">Phone Number is required</small>
+            <small *ngIf="primNumber.errors?.pattern" class="text-danger">Please provide a valid Phone Number</small>
+          </div>
+    
+    </div>
+
+    <div class="form-group">
+        <mat-form-field appearance="outline" style="width: 300px">
+            <mat-label>E-Mail:</mat-label>
+            <input [class.is-invalid] = "inputForm.get('email').invalid && inputForm.get('email').touched"
+             matInput type="email" placeholder="örnek: xyz@abc.com" formControlName="email" maxlength="50" >
+          </mat-form-field>
+
+          <div *ngIf="(primEmail.invalid && primEmail.touched) || primEmail.dirty">
+            <small *ngIf="primEmail.errors?.required" class="text-danger">E-Mail is required</small>
+            <small *ngIf="primEmail.errors?.pattern" class="text-danger">Please provide a valid E-Mail address</small>
+          </div>
+    
+    </div>
+
+    <div class="form-group">
+        <mat-form-field appearance="outline" style="width: 300px">
+            <mat-label>User Id:</mat-label>
+            <input matInput placeholder="User Id" formControlName="user" maxlength="50" required>
+          </mat-form-field>
+    
+    </div>
+
+    
+
+    <div class="form-group item">
+    
+    
+        <mat-label >WhatsApp Active:: <mat-checkbox class="example-margin" formControlName="wpActive" [(ngModel)]="checked1"></mat-checkbox>
+             
+            
+            </mat-label>
+
+    </div>
+    <br>
+    <div class="form-group item">
+
+
+        <mat-label >Email Active:: <mat-checkbox class="example-margin" formControlName="mailActive" [(ngModel)]="checked"></mat-checkbox>
+             
+            </mat-label>
+
+    </div>
+
+   
+
+<div class="form-group">
+    <button type="submit" class="btn btn-dark" [disabled]="!inputForm.valid"><i class="fa fa-database"></i> Submit</button>
+    <button type="button" class="btn btn-outline-dark ml-1" [mat-dialog-close]><i class="fa fa-close"></i> Close</button>
+    </div>
+
+
+
+
+
+</form>

@@ -1,0 +1,25 @@
+<p>screen-update works!</p>
+<form [formGroup]="inputForm" (ngSubmit)="saveCustomer()" novalidate>
+    <div class="form-group">
+      <mat-form-field appearance="outline" style="width: 120px">
+        <mat-label>Ekran Kodu</mat-label>
+        <input matInput placeholder="Ekran Kodu" formControlName="screenCode"  [minlength]="3"  [maxlength]="4" required>
+        <mat-error *ngIf="hasError('screenCode','required')">Ekran Kodu Giriniz</mat-error>
+        <mat-error *ngIf="hasError('screenCode','minlength')">
+          Ekran Kodu 3 karakter uzunluğunda olmalı!
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="form-group">
+      <mat-form-field appearance="outline" style="width: 500px">
+        <mat-label>Ekran Adı</mat-label>
+        <input matInput placeholder="Ekran Adı" formControlName="screenName" required>
+        <mat-error *ngIf="hasError('screenName','required')">Ekran Adı Giriniz</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="btn-toolbar">
+        <button mat-stroked-button  class="btn btn-default"  type="submit" [disabled]="!inputForm.valid" (click)="onNoClick()">Güncelle</button>
+        <button mat-stroked-button  class="btn btn-default" color="warn"  type ="reset" (click)="onNoClick()">Vazgeç</button>
+    </div>
+  </form>
+  

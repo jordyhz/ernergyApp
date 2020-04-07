@@ -1,0 +1,77 @@
+<div class="jumbotron">
+  <div class="container">
+
+    <div class="customerList-header" fxLayout="row">
+      <mat-form-field>
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+      </mat-form-field>
+    </div>
+    <div class="attributeListContainer">
+      <mat-spinner [style.display]="isLoading ? 'block' : 'none'" ></mat-spinner>
+      <mat-table [style.display]="isLoading === false ? 'block' : 'none'" [dataSource]="dsMeasurementPoint" matSort>
+        <ng-container matColumnDef="id">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Id </mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.id}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="name">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Ölçüm noktası Adı </mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.name}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="desc">
+          <mat-header-cell *matHeaderCellDef>Açıklaması </mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.desc}} </mat-cell>
+        </ng-container>
+
+
+        <ng-container matColumnDef="level">
+          <mat-header-cell *matHeaderCellDef> Seviyesi </mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.level}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="equipment">
+          <mat-header-cell *matHeaderCellDef> Ekipman Adı </mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.equipment.name}} </mat-cell>
+        </ng-container>
+
+
+
+        <ng-container matColumnDef="update">
+          <th mat-header-cell *matHeaderCellDef [width]="100"> Güncelle </th>
+          <td mat-cell *matCellDef="let row" [width]="100">
+            <button mat-icon-button color="accent" (click)="updateMeasurementPoint(row.id)">
+              <mat-icon class="mat-17">system_update</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="delete" >
+          <th class="sil" mat-header-cell *matHeaderCellDef [width]="100"> Sil </th>
+          <td mat-cell *matCellDef="let row" [width]="100">
+            <button mat-icon-button color="warn" (click)="confirmDialog(row.id)">
+              <mat-icon class="mat-18">delete</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;">
+        </mat-row>
+      </mat-table>
+
+      <mat-paginator [style.display]="isLoading === false ? 'block' : 'none'" [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+
+    </div>
+
+    <button class="mt-1" (click) = "openDialog()">Yeni Kayıt</button>
+
+  </div>
+</div>
+
+
+
+
+
+

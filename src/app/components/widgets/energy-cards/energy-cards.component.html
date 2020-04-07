@@ -1,0 +1,33 @@
+<!-- <p>energy-cards works!</p> -->
+
+<div class="card social_widget2" *ngIf="options && options.type">
+    <div class="body data text-center">
+        <ul class="list-unstyled m-b-0">
+            <li class="m-b-30">
+                <i class="{{options.post1.iconStyle}}"></i>
+                <h4 class="m-t-0 m-b-0">{{options.post1.value | number}}</h4>
+                <span>{{options.post1.title}}</span>
+            </li>
+            <li class="m-b-0">
+                <i class="{{options.post2.iconStyle}}"></i>
+                <h4 class="m-t-0 m-b-0">{{options.post2.value | number}}</h4>
+                <span>{{options.post2.title}}</span>
+            </li>
+        </ul>
+    </div>
+    <div class="name {{options.type}}">
+        <ul class="list-unstyled m-b-30">
+            <li class="m-b-25" *ngFor="let data of options.data">
+                <div class="progress-container">
+                    <span class="progress-badge">{{data.title}}</span>
+                    <div class="progress">
+                        <div class="progress-bar" [style.width.%]="data.value">
+                            <span class="progress-value">{{data.value}}%</span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <h5><i class="{{options.iconStyle}}"></i> <span>{{options.title}}</span></h5>
+    </div>
+</div>

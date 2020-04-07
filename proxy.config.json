@@ -1,0 +1,8 @@
+{
+  "/": {
+    "target": "https://ifconfig.co",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true
+  }
+}

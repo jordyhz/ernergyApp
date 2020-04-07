@@ -1,0 +1,48 @@
+<form [formGroup]="inputForm" (ngSubmit)="saveAttribute()">
+  <div class="form-group">
+    <mat-form-field appearance="outline" style="width: 140px">
+      <mat-label>Özellik Adı</mat-label>
+      <input matInput placeholder="Özellik Adı" formControlName="name" maxlength="20" required>
+      <mat-error *ngIf="hasError('name','required')">Özellik adını giriniz</mat-error>
+    </mat-form-field>
+  </div>
+  <div class="form-group">
+    <mat-form-field appearance="outline" style="width: 500px">
+      <mat-label>Açıklama</mat-label>
+      <textarea matInput placeholder="Açıklama" formControlName="desc" maxlength="100"></textarea>
+    </mat-form-field>
+  </div>
+  <div class="form-group">
+    <mat-form-field appearance="outline" style="width: 100px" required>
+      <mat-label>Birim</mat-label>
+      <input matInput placeholder="Birim" formControlName="unit" maxlength="10">
+    </mat-form-field>
+  </div>
+  <div class="form-group row">
+    <mat-form-field>
+      <mat-label>Özellik Tipi</mat-label>
+      <select matNativeControl formControlName="type" #singleSelect>
+        <option value="" selected></option>
+        <option value="1">Ekipman Özelliği</option>
+        <option value="2">Ölçüm Noktası Özelliği</option>
+      </select>
+    </mat-form-field>
+  </div>
+  <div class="form-group row">
+    <mat-form-field>
+      <mat-label>Hesaplama Yöntemi</mat-label>
+      <select matNativeControl formControlName="calcMethod"#singleSelect>
+        <option value="" selected></option>
+        <option value="1">Yöntem 1</option>
+        <option value="2">Yöntem 2</option>
+      </select>
+    </mat-form-field>
+  </div>
+  <div class="btn-toolbar">
+    <button mat-stroked-button  class="btn btn-default"  type="reset"  (click)="reset()">Yeni</button>
+    <button mat-stroked-button  class="btn btn-default"  type="submit" [disabled]="!inputForm.valid">Kaydet</button>
+    <button mat-stroked-button  class="btn btn-default" color="warn"  type ="reset" (click)="onNoClick()">Vazgeç</button>
+  </div>
+
+</form>
+
